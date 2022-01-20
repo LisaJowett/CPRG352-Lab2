@@ -17,9 +17,11 @@
         <form action="age" method="post">
             <label for="age">Enter your age:</label>
             <input type="number" name="age" id="age">
-            <button type="submit" value="submit">Submit</button>
+            <button type="submit">Age next birthday</button>
         </form>
         
         <p>$(message)</p>
+        <br>
+        <a href="arithmetic">Arithmetic Calculator Page</a>
     </body>
 </html>
