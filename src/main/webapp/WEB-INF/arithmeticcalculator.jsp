@@ -31,6 +31,6 @@
         
         <p>$(message)</p>
         <br>
-        <a href="/age">Age Calculator Page</a>
+        <a href="age">Age Calculator Page</a>
     </body>
 </html>

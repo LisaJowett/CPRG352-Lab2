@@ -30,6 +30,7 @@ public class ArithmeticCalculatorServlet extends HttpServlet
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException 
     {
+        request.setAttribute("result", "---");
         getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request, response);
     }
 
@@ -58,30 +59,30 @@ public class ArithmeticCalculatorServlet extends HttpServlet
                             {
                                 int input1 = Integer.parseInt(inputOne);
                                 int input2 = Integer.parseInt(inputTwo);
-                                int sum = input1 + input2;
-                                request.setAttribute("message", "Result: " + sum);
+                                int result = input1 + input2;
+                                request.setAttribute("message", "Result: " + result);
                             }
 
                         if (operand.equals("-"))
                             {
                                 int input1 = Integer.parseInt(inputOne);
                                 int input2 = Integer.parseInt(inputTwo);
-                                int minus = input1 - input2;
-                                request.setAttribute("message", "Result: " + minus);
+                                int result = input1 - input2;
+                                request.setAttribute("message", "Result: " + result);
                             }
                         if (operand.equals("*"))
                             {
                                 int input1 = Integer.parseInt(inputOne);
                                 int input2 = Integer.parseInt(inputTwo);
-                                int multiply = input1 * input2;
-                                request.setAttribute("message", "Result: " + multiply);
+                                int result = input1 * input2;
+                                request.setAttribute("message", "Result: " + result);
                             }
                         if (operand.equals("%"))
                             {
                                 int input1 = Integer.parseInt(inputOne);
                                 int input2 = Integer.parseInt(inputTwo);
-                                int divide = input1 % input2;
-                                request.setAttribute("message", "Result: " + divide);
+                                int result = input1 % input2;
+                                request.setAttribute("message", "Result: " + result);
                             }
                     }
 
@@ -94,7 +95,9 @@ public class ArithmeticCalculatorServlet extends HttpServlet
                 else
                     {
                         request.setAttribute("message", "Result: Invalid");
-                    }   
+                    } 
+ 
+                getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request, response); 
     }
 }
 
